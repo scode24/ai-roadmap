@@ -1,13 +1,12 @@
 # AI Engineer Roadmap
 
-A modern, offline-first React application designed to guide Senior Software Engineers through their transition into Artificial Intelligence. Built with a beautiful glassmorphism UI, gamification, and rich interactive components.
+A modern, offline-first React application designed to guide Software Engineers through their transition into Artificial Intelligence. Built with a beautiful glassmorphism UI, gamification, and rich interactive components.
 
 ## Screenshots
 
-<div align="center">
-  <img src="./public/desktop_dashboard.png" alt="Desktop View" width="48%" />
-  <img src="./public/mobile_dashboard.png" alt="Mobile View" width="48%" />
-</div>
+| Desktop View | Mobile View |
+| :---: | :---: |
+| <img src="./public/desktop_dashboard.png" alt="Desktop View" height="400" /> | <img src="./public/mobile_dashboard.png" alt="Mobile View" height="400" /> |
 
 > **Note**: The screenshots above are high-fidelity AI-generated mockups showcasing the layout and design vision. For 100% pixel-perfect accuracy, you may replace `./public/desktop_dashboard.png` and `./public/mobile_dashboard.png` with actual screenshots of the running app later!
 
@@ -33,21 +32,25 @@ A modern, offline-first React application designed to guide Senior Software Engi
 ## Getting Started
 
 ### Prerequisites
+
 Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 ### Installation
 
 1. Clone the repository and navigate to the project directory:
+
    ```bash
    cd ai-roadmap
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start the development server:
+
    ```bash
    npm start
    ```
