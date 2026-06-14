@@ -4,11 +4,9 @@ A modern, offline-first React application designed to guide Software Engineers t
 
 ## Screenshots
 
-| Desktop View | Mobile View |
-| :---: | :---: |
+|                                 Desktop View                                 |                                Mobile View                                 |
+| :--------------------------------------------------------------------------: | :------------------------------------------------------------------------: |
 | <img src="./public/desktop_dashboard.png" alt="Desktop View" height="400" /> | <img src="./public/mobile_dashboard.png" alt="Mobile View" height="400" /> |
-
-> **Note**: The screenshots above are high-fidelity AI-generated mockups showcasing the layout and design vision. For 100% pixel-perfect accuracy, you may replace `./public/desktop_dashboard.png` and `./public/mobile_dashboard.png` with actual screenshots of the running app later!
 
 ## Features
 
