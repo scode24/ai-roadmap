@@ -84,13 +84,14 @@ export const RoadmapView = () => {
                     exit={{ height: 0, opacity: 0 }}
                     className="border-t border-border bg-muted/50"
                   >
-                    <div className="p-6 space-y-4">
-                      {phase.skills.map((skill) => {
+                    <div>
+                      {phase.skills.map((skill, index) => {
                         const isCompleted = completedSkills[skill.id];
+                        const isLast = index === phase.skills.length - 1;
                         return (
                           <div 
                             key={skill.id}
-                            className={`p-4 rounded-xl border transition-all ${isCompleted ? 'bg-primary/10 border-primary/30' : 'bg-background border-border hover:border-muted-foreground'}`}
+                            className={`p-5 transition-all ${isLast ? '' : 'border-b border-border'} ${isCompleted ? 'bg-primary/10 border-primary/30' : 'bg-background hover:bg-muted/10'} hover:border-primary/50`}
                           >
                             <div className="flex items-start">
                               <div className="flex items-start space-x-3 w-full">
@@ -118,7 +119,7 @@ export const RoadmapView = () => {
                                   <p className="text-muted-foreground text-sm mt-1">{skill.description}</p>
                                   
                                   {/* Resources */}
-                                  <div className="mt-3 space-y-2 flex flex-wrap gap-2">
+                                  <div className="mt-3 flex flex-wrap gap-2">
                                     {skill.resources.map((res, i) => (
                                       <a 
                                         key={i}

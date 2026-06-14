@@ -10,12 +10,16 @@ import { UserAvatar } from './components/UserAvatar';
 import { MobileNavBar } from './components/MobileNavBar';
 import { UserProfile } from './components/UserProfile';
 import { TimelineSelector } from './components/TimelineSelector';
-import { BrainCircuit, Moon, Sun, Code } from 'lucide-react';
+import { BrainCircuit, Moon, Sun, Code, Share2 } from 'lucide-react';
 import { badges } from './data/badges';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SharedProfile } from './components/SharedProfile';
+import { ShareModal } from './components/ShareModal';
 
 const MainApp = () => {
   const { appTheme, setAppTheme, userName, getStats } = useRoadmap();
   const [isAvatarPickerOpen, setIsAvatarPickerOpen] = useState(false);
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
   const [mobileTab, setMobileTab] = useState('lessons');
   const stats = getStats();
   const earnedBadges = badges.filter(b => stats.percentage >= b.threshold);
@@ -35,6 +39,7 @@ const MainApp = () => {
       <OnboardingModal />
       <BadgeNotification />
       <AvatarPickerModal isOpen={isAvatarPickerOpen} onClose={() => setIsAvatarPickerOpen(false)} />
+      <ShareModal isOpen={isShareModalOpen} onClose={() => setIsShareModalOpen(false)} />
       <div className="min-h-screen bg-background text-foreground transition-colors duration-300 selection:bg-primary/30">
         
         {/* Header */}
@@ -116,6 +121,13 @@ const MainApp = () => {
 
       {/* Floating Action Buttons (Desktop only or positioned above mobile nav) */}
       <div className="fixed bottom-20 lg:bottom-6 right-6 z-50 flex flex-col space-y-3">
+        <button 
+          onClick={() => setIsShareModalOpen(true)}
+          className="p-3 rounded-full bg-primary text-primary-foreground border border-primary hover:bg-primary/90 transition-colors flex items-center justify-center shadow-lg"
+          title="Share Profile"
+        >
+          <Share2 size={24} />
+        </button>
         <a 
           href="https://github.com" 
           target="_blank" 
@@ -143,7 +155,12 @@ const MainApp = () => {
 function App() {
   return (
     <RoadmapProvider>
-      <MainApp />
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainApp />} />
+          <Route path="/:code" element={<SharedProfile />} />
+        </Routes>
+      </Router>
     </RoadmapProvider>
   );
 }

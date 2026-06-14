@@ -3,12 +3,34 @@ import { useRoadmap } from '../context/RoadmapContext';
 import { UserAvatar } from './UserAvatar';
 import { SettingsPanel } from './SettingsPanel';
 import { badges } from '../data/badges';
-import { Trophy } from 'lucide-react';
+import { Trophy, Share2 } from 'lucide-react';
+import { useState } from 'react';
+import { encodeProfileData } from '../utils/shareUtils';
 
 export const UserProfile = ({ onAvatarClick }) => {
-  const { userName, getStats } = useRoadmap();
+  const { userName, avatarStyle, avatarSeed, completedSkills, getStats } = useRoadmap();
   const stats = getStats();
   const earnedBadges = badges.filter(b => stats.percentage >= b.threshold);
+  
+  const [shareCopied, setShareCopied] = useState(false);
+
+  const handleShare = () => {
+    const profileData = {
+      userName,
+      avatarStyle,
+      avatarSeed,
+      completedSkills,
+      percentage: stats.percentage
+    };
+    const code = encodeProfileData(profileData);
+    if (code) {
+      const shareUrl = `${window.location.origin}/${code}`;
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        setShareCopied(true);
+        setTimeout(() => setShareCopied(false), 3000);
+      });
+    }
+  };
 
   return (
     <div className="flex flex-col space-y-6">
@@ -59,6 +81,14 @@ export const UserProfile = ({ onAvatarClick }) => {
           )}
         </div>
       </div>
+
+      <button 
+        onClick={handleShare}
+        className="w-full flex items-center justify-center space-x-2 py-3 bg-primary text-primary-foreground font-bold rounded-xl transition-all hover:bg-primary/90 active:scale-95"
+      >
+        <Share2 size={20} />
+        <span>{shareCopied ? 'Link Copied to Clipboard!' : 'Share Profile'}</span>
+      </button>
 
       {/* Settings section */}
       <SettingsPanel />
