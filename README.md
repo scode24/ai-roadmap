@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# AI Engineer Roadmap
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, offline-first React application designed to guide Senior Software Engineers through their transition into Artificial Intelligence. Built with a beautiful glassmorphism UI, gamification, and rich interactive components.
 
-## Available Scripts
+## Screenshots
 
-In the project directory, you can run:
+<div align="center">
+  <img src="./public/desktop_dashboard.png" alt="Desktop View" width="48%" />
+  <img src="./public/mobile_dashboard.png" alt="Mobile View" width="48%" />
+</div>
 
-### `npm start`
+> **Note**: The screenshots above are high-fidelity AI-generated mockups showcasing the layout and design vision. For 100% pixel-perfect accuracy, you may replace `./public/desktop_dashboard.png` and `./public/mobile_dashboard.png` with actual screenshots of the running app later!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Interactive Learning Roadmap**: Step-by-step curriculum covering Python Basics, ML Fundamentals, Deep Learning (PyTorch), LLMs, MLOps, and more.
+- **Activity Calendar Heatmap**: Visually track your daily learning streak with a GitHub-style activity graph. Includes Year and Month filters.
+- **Gamification & Badges**: Earn achievements like "First Steps" and "Halfway There" as you progress through the curriculum.
+- **Customizable Avatar**: Pick from 15 diverse, randomly generated avatars (incorporating various art styles like adventurers, bots, and shapes) using the DiceBear API.
+- **Interview Timeline**: Adjust your roadmap pacing (1 Month, 3 Months, 6 Months, or Comprehensive) to match your target interview dates.
+- **Offline-First & Data Portability**: All progress is saved automatically to `localStorage`. You can securely Export/Import your `.json` data to sync across devices (includes strict data-type validation).
+- **Mobile Optimized**: Features a dedicated sticky bottom navigation bar on mobile devices to easily switch between your Profile, Dashboard, and Lessons.
+- **Dynamic Theming**: Seamlessly switch between Light and a premium Emerald Green Dark Mode.
 
-### `npm test`
+## Technology Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Framework**: React.js
+- **Styling**: Tailwind CSS (with custom CSS variables for theming)
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
+- **Charts/Graphs**: Recharts & React Activity Calendar
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository and navigate to the project directory:
+   ```bash
+   cd ai-roadmap
+   ```
 
-### `npm run eject`
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
