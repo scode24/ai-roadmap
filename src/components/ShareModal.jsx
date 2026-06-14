@@ -51,7 +51,7 @@ export const ShareModal = ({ isOpen, onClose }) => {
             </button>
             
             <div className="p-6">
-              <h2 className="text-2xl font-bold text-foreground mb-2">Share Your Roadmap</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-2">Share Your Progress</h2>
               <p className="text-muted-foreground mb-6">
                 Copy this secure link to share your AI Engineer profile, earned badges, and suitable roles.
               </p>

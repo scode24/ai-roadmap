@@ -1,6 +1,7 @@
 import React from 'react';
 import { Clock } from 'lucide-react';
 import { useRoadmap } from '../context/RoadmapContext';
+import { curriculumData } from '../data/curriculum';
 
 export const TimelineSelector = () => {
   const { timelineMode, setTimelineMode } = useRoadmap();
@@ -17,17 +18,24 @@ export const TimelineSelector = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-col items-center gap-4">
+      <div className="flex flex-col md:flex-col gap-4">
         <select 
           value={timelineMode}
           onChange={(e) => setTimelineMode(e.target.value)}
           className="bg-background border border-input text-foreground rounded-lg px-4 py-2 outline-none focus:border-primary w-full"
         >
-          <option value="1m">1 Month (Core Interview Focus)</option>
-          <option value="3m">3 Months (Balanced Preparation)</option>
-          <option value="6m">6 Months (Deep Dive)</option>
-          <option value="comprehensive">Comprehensive (End-to-End AI SWE)</option>
+          {curriculumData.meta.interviewTimelines.map(timeline => (
+            <option key={timeline.id} value={timeline.id}>
+              {timeline.label} ({timeline.sublabel})
+            </option>
+          ))}
         </select>
+        
+        {curriculumData.meta.interviewTimelines.find(t => t.id === timelineMode)?.description && (
+          <p className="text-sm text-muted-foreground">
+            {curriculumData.meta.interviewTimelines.find(t => t.id === timelineMode).description}
+          </p>
+        )}
       </div>
     </div>
   );

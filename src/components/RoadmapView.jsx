@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRoadmap } from '../context/RoadmapContext';
+import { curriculumData } from '../data/curriculum';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, Circle, PlayCircle, ChevronDown, ChevronUp, Calendar } from 'lucide-react';
 
@@ -16,13 +17,8 @@ export const RoadmapView = () => {
   };
 
   const getTimelineText = () => {
-    switch (timelineMode) {
-      case '1m': return "Fast-Track Interview Focus (4 Weeks)";
-      case '3m': return "Balanced Preparation (12 Weeks)";
-      case '6m': return "Deep Dive (24 Weeks)";
-      case 'comprehensive': return "Comprehensive Masterclass (Self-Paced)";
-      default: return "Timeline";
-    }
+    const timeline = curriculumData.meta.interviewTimelines.find(t => t.id === timelineMode);
+    return timeline ? `${timeline.label} - ${timeline.sublabel}` : "Timeline";
   };
 
 
@@ -110,7 +106,7 @@ export const RoadmapView = () => {
                                     <h4 className={`text-lg font-medium ${isCompleted ? 'text-muted-foreground line-through' : 'text-foreground'}`}>
                                       {skill.name}
                                     </h4>
-                                    {skill.importantForInterview && timelineMode === 'comprehensive' && (
+                                    {skill.importantForInterview && timelineMode === 'end-to-end' && (
                                       <span className="mt-1 sm:mt-0 px-2 py-1 bg-amber-500/20 text-amber-400 text-xs rounded-md border border-amber-500/30 font-medium inline-block self-start sm:self-center">
                                         Interview Core
                                       </span>

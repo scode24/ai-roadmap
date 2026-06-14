@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { useRoadmap } from '../context/RoadmapContext';
 import { Download, Upload, Clock, AlertTriangle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { curriculumData } from '../data/curriculum';
 
 export const SettingsPanel = () => {
   const { timelineMode, setTimelineMode, exportProgress, importProgress } = useRoadmap();
@@ -120,10 +121,11 @@ export const SettingsPanel = () => {
           onChange={(e) => setTimelineMode(e.target.value)}
           className="bg-background border border-input text-foreground rounded-lg px-4 py-2 outline-none focus:border-primary w-full"
         >
-          <option value="1m">1 Month (Core Interview Focus)</option>
-          <option value="3m">3 Months (Balanced Preparation)</option>
-          <option value="6m">6 Months (Deep Dive)</option>
-          <option value="comprehensive">Comprehensive (End-to-End AI SWE)</option>
+          {curriculumData.meta.interviewTimelines.map(timeline => (
+            <option key={timeline.id} value={timeline.id}>
+              {timeline.label} ({timeline.sublabel})
+            </option>
+          ))}
         </select>
         
         <div className="w-full h-px bg-border my-2"></div>

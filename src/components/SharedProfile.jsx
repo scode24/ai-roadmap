@@ -42,7 +42,7 @@ export const SharedProfile = () => {
   const suitableRoles = getSuitableRoles(completedSkills);
 
   // Flatten curriculum to get learned skills details
-  const allSkills = curriculumData.flatMap(p => p.skills);
+  const allSkills = curriculumData.phases.flatMap(p => p.skills);
   const learnedSkills = allSkills.filter(s => completedSkills[s.id]);
 
   return (

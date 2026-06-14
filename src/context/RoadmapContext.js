@@ -4,9 +4,9 @@ import { getCurriculum } from '../data/curriculum';
 const RoadmapContext = createContext();
 
 export const RoadmapProvider = ({ children }) => {
-  // modes: "1m", "3m", "6m", "comprehensive"
+  // modes from curriculumData.meta.interviewTimelines
   const [timelineMode, setTimelineMode] = useState(() => {
-    return localStorage.getItem('timelineMode') || 'comprehensive';
+    return localStorage.getItem('timelineMode') || '6-month';
   });
 
   const [completedSkills, setCompletedSkills] = useState(() => {

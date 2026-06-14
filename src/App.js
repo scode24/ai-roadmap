@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { RoadmapProvider, useRoadmap } from './context/RoadmapContext';
 import { Dashboard } from './components/Dashboard';
 import { SettingsPanel } from './components/SettingsPanel';
@@ -10,7 +10,7 @@ import { UserAvatar } from './components/UserAvatar';
 import { MobileNavBar } from './components/MobileNavBar';
 import { UserProfile } from './components/UserProfile';
 import { TimelineSelector } from './components/TimelineSelector';
-import { BrainCircuit, Moon, Sun, Code, Share2 } from 'lucide-react';
+import { Moon, Sun, Code, Share2 } from 'lucide-react';
 import { badges } from './data/badges';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { SharedProfile } from './components/SharedProfile';
@@ -45,13 +45,11 @@ const MainApp = () => {
         {/* Header */}
       <header className="border-b border-border bg-background/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="p-2 bg-primary rounded-lg text-primary-foreground">
-              <BrainCircuit size={24} />
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl">
+              AI
             </div>
-            <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary">
-              AI Engineer Roadmap
-            </h1>
+            <h1 className="text-xl font-bold text-foreground tracking-tight">Engineer Roadmap</h1>
           </div>
           
           {/* Header Actions */}
@@ -123,23 +121,23 @@ const MainApp = () => {
       <div className="fixed bottom-20 lg:bottom-6 right-6 z-50 flex flex-col space-y-3">
         <button 
           onClick={() => setIsShareModalOpen(true)}
-          className="p-3 rounded-full bg-primary text-primary-foreground border border-primary hover:bg-primary/90 transition-colors flex items-center justify-center shadow-lg"
+          className="p-3 rounded-xl bg-primary text-primary-foreground border border-primary hover:bg-primary/90 transition-colors flex items-center justify-center shadow-lg"
           title="Share Profile"
         >
           <Share2 size={24} />
         </button>
         <a 
-          href="https://github.com" 
+          href="https://github.com/scode24/ai-roadmap" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="p-3 rounded-full bg-secondary border border-border hover:bg-muted transition-colors text-muted-foreground hover:text-foreground shadow-lg flex items-center justify-center"
+          className="p-3 rounded-xl bg-secondary border border-border hover:bg-muted transition-colors text-muted-foreground hover:text-foreground shadow-lg flex items-center justify-center"
           title="View on GitHub"
         >
           <Code size={24} />
         </a>
         <button 
           onClick={cycleTheme}
-          className="p-3 rounded-full bg-secondary border border-border hover:bg-muted transition-colors flex items-center justify-center text-muted-foreground shadow-lg"
+          className="p-3 rounded-xl bg-secondary border border-border hover:bg-muted transition-colors flex items-center justify-center text-muted-foreground shadow-lg"
           title={`Toggle Theme (${appTheme})`}
         >
           {getThemeIcon()}
