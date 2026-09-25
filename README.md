@@ -1,4 +1,4 @@
-# AI Engineer Roadmap (Branch A)
+# AI Engineer Roadmap (Branch A + Branch B)
 
 A modern, offline-first React application designed to guide Software Engineers through their transition into Artificial Intelligence. Built with a beautiful glassmorphism UI, gamification, and rich interactive components.
 
